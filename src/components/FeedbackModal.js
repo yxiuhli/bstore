@@ -79,7 +79,7 @@ const FeedbackModal = (props) => {
       <Modal.Body>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Điểm đánh giá - {rating} sao</Form.Label>
-          <RatingStar onRating={(idx)=>setRating(idx)} rating={rating}/>
+          <RatingStar onRating={(idx)=>setRating(idx)} rating={rating} className="flex flex-row"/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Đánh giá</Form.Label>

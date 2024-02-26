@@ -74,7 +74,7 @@ const FeedbackDetail = () => {
             <img className='me-2' src={user.photo?user.photo:"/images/profile_pic.jpg"} alt="" style={{ width:"50px", height:"50px", borderRadius: "100px" }}/>
             <span>{user.name}</span>
           </Col>
-          <RatingStar rating={feedback.rating} disabled/>
+          <RatingStar rating={feedback.rating} disabled className="flex flex-row"/>
           <span className="mt-2">{feedback.comment}</span>
           <hr className='w-100 mt-2'/>
           <Form onSubmit={onSubmit}>

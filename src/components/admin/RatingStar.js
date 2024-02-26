@@ -4,8 +4,8 @@ import { FaStar } from 'react-icons/fa'
 const RatingStar = ({className, rating, onRating, disabled = false}) => {
   const [hoverRating, setHoverRating] = useState(0)
   const getColor = index =>{
-    if(hoverRating >= index) return "yellow"
-    else if(!hoverRating && rating >= index) return "yellow"
+    if(hoverRating >= index) return "#ffcc00"
+    else if(!hoverRating && rating >= index) return "#ffcc00"
     return "gray"
   }
 

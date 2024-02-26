@@ -45,13 +45,13 @@ const DrinkTable = () => {
 
   return (
     <Container className='mt-5 d-flex flex-column' fluid>
-      <AddButton onClick={openDrinkModal} text="Thêm thức uống" className="d-flex ms-auto me-2" showDropdown={false}/>
+      <AddButton onClick={openDrinkModal} text="Thêm sản phẩm" className="d-flex ms-auto me-2" showDropdown={false}/>
       <Table responsive="lg" className='mt-3'>
         <thead>
           <tr className='bg-white' style={{ verticalAlign:"middle" }}>
             <th>Tên</th>
             <th>Hình ảnh</th>
-            <th style={{ width: "50%" }}>Giới thiệu</th>
+            <th style={{ width: "40%" }}>Giới thiệu</th>
             <th>Danh mục</th>
             <th>Giá</th>
             <th>Thao tác</th>

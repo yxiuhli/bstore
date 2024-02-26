@@ -8,6 +8,8 @@ import background from "../img/ContactPage/backgroudContact.png";
 import AdminPagination from './admin/AdminPagination';
 import MenuItem from './MenuItem';
 import SearchBox from './SearchBox';
+import { useProduct } from '../context/ProductContext';
+import Spinner from "./Spinner";
 
 const PageSize = 12;
 
@@ -67,6 +69,14 @@ const MenuPage = () => {
   }
 
 
+  if (!drinks) {
+    return (
+      <>
+          <Spinner size={100} loading />
+      </>
+    );
+  }
+
   return (
     <div className='mb-5'>
         <Container fluid 
@@ -78,20 +88,21 @@ const MenuPage = () => {
           backgroundSize:"100% 100%",
           display: "flex"
         }}> {/* <!------Introducer--> */}
-            <Row className='my-auto ms-5'>
-            <p id="p1">Thưởng thức hương vị</p>
-            <p id="p2">nguyên chất</p>
-            <p id="p3">"Tràn đầy năng lượng mỗi ngày cùng thức uống tuyệt vời"</p>
+            <Row className='my-auto ms-5 max-w-1/2 w-fit'>
+            
+            
             <Col>
-              <Link to='menu-section' spy={true} smooth={true} duration={200}><Button className="btn-default get"> Xem ngay <i class="fas fa-long-arrow-down" id="arrowGet"></i></Button></Link> 
+            <div className='intro'>
+            <p id="p2">SẢN PHẨM</p>
+            </div>
             </Col>
-            </Row>  
+            </Row>
             
         </Container> {/* <!-----End Introducer--> */}
 
         <Container className="mt-4"> {/* <!-------Body--> */}
                 <Col className="d-flex align-items-center">  {/* <!-----headline-menu-product--> */}
-                    <span id="p4">Thực đơn</span>
+                    <span id="p4">Sản phẩm</span>
                     <SearchBox prevSearch={query.get("q") || ""}/>
                     <div className="btn-group align-items-center d-flex">
                       <span className='p-0'>Danh mục:</span>

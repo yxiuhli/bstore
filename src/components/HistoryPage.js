@@ -32,11 +32,16 @@ const HistoryPage = () => {
           backgroundSize:"100% 100%",
           display: "flex"
         }}> {/* <!------Introducer--> */}
-            <Row className='my-auto ms-5'>
-            <p id="p1">Lời cảm ơn từ IROSAS</p>
-            <p id="p2">Chân thành cảm ơn quý khách</p>
-            <p id="p3">IROSAS xin chúc quý khách một ngày tốt lành nhất.</p>
-            </Row>  
+            <Row className='my-auto ms-5 w-7/12'>
+            
+            
+            <Col>
+            <div className='intro'>
+            <p id="p2">LICH SỬ MUA HÀNG</p>
+            <p id="p3">Chân thành cảm ơn quý khách, chúc quý khách một ngày tốt lành!</p>
+            </div>
+            </Col>
+            </Row>
             
         </Container> {/* <!-----End Introducer--> */}
 

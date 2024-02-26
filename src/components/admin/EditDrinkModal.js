@@ -40,7 +40,7 @@ const EditDrinkModal = (props) => {
       Swal.fire(
         {
           icon: "error",
-          title: "Tạo thức uống thất bại",
+          title: "Tạo sản phẩm thất bại",
           text: "Không được bỏ trống tên",
         }
       )
@@ -50,7 +50,7 @@ const EditDrinkModal = (props) => {
       Swal.fire(
         {
           icon: "error",
-          title: "Tạo thức uống thất bại",
+          title: "Tạo sản phẩm thất bại",
           text: "Vui lòng chọn danh mục",
         }
       )
@@ -60,7 +60,7 @@ const EditDrinkModal = (props) => {
       Swal.fire(
         {
           icon: "error",
-          title: "Tạo thức uống thất bại",
+          title: "Tạo sản phẩm thất bại",
           text: "Không được bỏ trống giá tiền",
         }
       )
@@ -70,7 +70,7 @@ const EditDrinkModal = (props) => {
       Swal.fire(
         {
           icon: "error",
-          title: "Tạo thức uống thất bại",
+          title: "Tạo sản phẩm thất bại",
           text: "Không được bỏ trống giới thiệu",
         }
       )
@@ -80,8 +80,8 @@ const EditDrinkModal = (props) => {
       Swal.fire(
         {
           icon: "error",
-          title: "Tạo thức uống thất bại",
-          text: "Vui lòng chọn ảnh thức uống",
+          title: "Tạo sản phẩm thất bại",
+          text: "Vui lòng chọn ảnh sản phẩm",
         }
       )
       return
@@ -101,7 +101,7 @@ const EditDrinkModal = (props) => {
     ).fire(
       {
         icon: "success",
-        text: "Cập nhật thức uống thành công",
+        text: "Cập nhật sản phẩm thành công",
       }
     )
 
@@ -118,7 +118,7 @@ const EditDrinkModal = (props) => {
 
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" className="w-100 text-center">
-          Chỉnh sửa thức uống
+          Chỉnh sửa sản phẩm
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

@@ -60,16 +60,13 @@ const ProfilePage = (props) => {
   }
 
   return (
-    <div className='full-height' style={{ backgroundImage: `url(/images/profile.jpg)`, backgroundSize:"cover" }}>
-      <div className='profile-title ms-auto me-auto d-flex'>
-        Thông tin cá nhân
-      </div>
-      <Container style={{ marginTop:"50px" }}>
+    <div className='full-height' style={{ backgroundColor: `slate`, backgroundSize:"cover" }}>
+      <Container>
         <Form onSubmit={onSubmit}>
-        <Row>
+        <Row className='pt-10'>
           <Col>
             <Row className="justify-content-center">
-            <img className="profile-pic p-0" src={photo?photo:"images/profile_pic.jpg"}  onClick={openFileDialog} alt=""/>
+            <img className="profile-pic p-0 drop-shadow-2xl" src={photo?photo:"images/profile_pic.jpg"}  onClick={openFileDialog} alt=""/>
               <PrimaryButton style={{ width:"350px", marginTop:"20px", padding:"10px 15px" }} text="Chỉnh sửa ảnh đại diện" onClick={openFileDialog}/>
               <Form className='image-form form-control'  style={{ display: "none" }} >
                 <input ref={imageFormControl} type="file" className='image-form--input' onChange={changeHandler}/>

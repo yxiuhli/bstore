@@ -38,12 +38,12 @@ const OrderHistoryItem = ({item}) => {
       <tr style={{ verticalAlign:"middle" }} className="bg-white">
               <td>{item.id}</td>
               <td>{myFood.length}</td>
-              <td style={{ color: item.status === "Chờ xác nhận" ? 'orange' : item.status === "Đã giao" ? 'green' : item.status === "Đã hủy" ? 'red' : item.status === "Đang giao hàng" ? 'gold' : item.status === "Đang pha chế" ? 'burlywood' : ''  }}>{item.status}</td>
+              <td style={{ color: item.status === "Chờ xác nhận" ? 'orange' : item.status === "Đã giao" ? 'green' : item.status === "Đã hủy" ? 'red' : item.status === "Đang giao hàng" ? 'gold' : item.status === "Đang xử lý" ? 'burlywood' : ''  }}>{item.status}</td>
               <td>{item.date}</td>
               <td>{item.total.toLocaleString()} đ</td>
               <td>
                 {
-                  (item.status === "Đang pha chế" || item.status === "Chờ xác nhận") ? <Button className='py-1 px-2' variant='dark' onClick={()=>setShowDetailModal(true)}>
+                  (item.status === "Đang xử lý" || item.status === "Chờ xác nhận") ? <Button className='py-1 px-2' variant='dark' onClick={()=>setShowDetailModal(true)}>
                   <RiPencilLine/>
                 </Button> : <Button className='py-1 px-2' variant='dark' onClick={()=>setShowDetailModal(true)}>
                   <AiOutlineEye/>

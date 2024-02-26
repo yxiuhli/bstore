@@ -7,6 +7,7 @@ import { BsCart2 } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { useUser } from "../context/UserContext";
 import useDatabase from "../hooks/useDatabase";
 import OutlineButton from "./OutlineButton";
 import SearchBox from "./SearchBox";
@@ -14,6 +15,7 @@ import UserProf from "./UserProf";
 
 const MyNav = () => {
   const navigate = useNavigate();
+  const { isLoggedIn, userData} = useUser();
   const {auth} = useAuth();
   const toggler = useRef()
   const navbar = useRef()
@@ -35,17 +37,22 @@ const MyNav = () => {
   }
 
   return (
-    <Navbar sticky="top" expand="lg" bg="white" className="me-2" collapseOnSelect ref={navbar}>
+    <Navbar sticky="top" expand="xl" bg="white" className="me-2" collapseOnSelect ref={navbar}>
       <Container fluid>
-        <Link to="/" className="me-auto nav-brand navbar-brand"><h2 style={{ color: "#7D6E83" }}>Irosas</h2></Link>
+        <Link to="/" className="me-auto nav-brand navbar-brand text-4xl">
+          <h2 style={{ color: "sienna" }}>B-Store</h2>
+          
+        </Link>
+        <img src="/plant.ico" alt="icon" className="mb-2 pr-12"/>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" ref={toggler} />
         <Navbar.Collapse id="basic-navbar-nav">
-          <SearchBox />
+          
           <Nav className="d-flex ms-auto">
-            <NavLink end to="/" className='menu-item nav-link' onClick={toggleCollapse}>Trang chủ</NavLink>
-            <NavLink end to="contacts" className='menu-item nav-link' onClick={toggleCollapse}>Liên hệ</NavLink>
-            <NavLink end to="menu" className='menu-item nav-link' onClick={toggleCollapse}>Thực đơn</NavLink>
+            <NavLink end to="/" className='mr-6 menu-item nav-link' onClick={toggleCollapse}>Trang chủ</NavLink>
+            <NavLink end to="menu" className='menu-item nav-link' onClick={toggleCollapse}>Sản phẩm</NavLink>
             <NavLink end to="category" className='menu-item nav-link' onClick={toggleCollapse}>Danh mục</NavLink>
+            <NavLink end to="contacts" className='menu-item nav-link' onClick={toggleCollapse}>Liên hệ</NavLink>
             <Nav.Item className='menu-item' style={{ alignItems: "center"}}><hr className='solid-vert'/></Nav.Item>
             {
               auth?.user?.type === 1 
@@ -63,7 +70,7 @@ const MyNav = () => {
                 </NavLink>
             }
             
-          </Nav>
+            </Nav>
           {
             auth?.user 
               ? (<UserProf src={auth?.user?.photo} name={auth?.user?.name}/>)

@@ -18,7 +18,7 @@ const DrinkFeedback = ({feedback}) => {
         <img src={user.photo?user.photo:"/images/profile_pic.jpg"} alt="userprofile" style={{ cursor: "auto" }} className='user-nav me-2'/>
         <h5 className='my-0 ms-2 p-0'>{user.name?user.name:""}</h5>
       </Col>
-      <RatingStar className="mt-2 mb-2" onRating={()=><></>} rating={feedback.rating} disabled/>
+      <RatingStar className="mt-2 mb-2 flex flex-row" onRating={()=><></>} rating={feedback.rating} disabled/>
       <span>{feedback.comment}</span>
     </Row>
   )

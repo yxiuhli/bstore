@@ -18,11 +18,20 @@ import { Link } from "react-scroll";
 import useDatabase from "../hooks/useDatabase";
 import CategoryItem from "./CategoryItem";
 import Footer from "./Footer";
+import { useCategory } from "../context/CategoryContext";
+import Spinner from "./Spinner";
 
 const CategoryPage = () => {
 
   const {categories}  = useDatabase()
 
+  if (!categories) {
+    return (
+      <>
+          <Spinner size={100} loading />
+      </>
+    );
+  }
   return (
     <div>
       <Container
@@ -36,70 +45,31 @@ const CategoryPage = () => {
           display: "flex"
         }}
       >
-        <Row className="my-auto ms-5">
-          <p id="p1">Đầy đủ các danh mục</p>
-          <p id="p2">cho bạn lựa chọn</p>
-          <p id="p3">
-            Mỗi một loại thức uống sẽ cho bạn những trải nghiệm mới mẻ khác
-            nhau.
-          </p>
-          <Col>
-            <Link to="category-section" spy={true} smooth={true} duration={200}>
-              <Button Button className="btn-default get">
-                Xem ngay <i class="fas fa-long-arrow-down" id="arrowGet"></i>
-              </Button>
-            </Link>
+        <Row className='my-auto ms-5 max-w-1/2 w-fit'>
             
-          </Col>
-        </Row>
+            
+            <Col>
+            <div className='intro'>
+            <p id="p2">DANH MỤC SẢN PHẨM</p>
+            </div>
+            </Col>
+            </Row>
       </Container>
       
       <Container className="mt-4 mb-5">
       <p
         id="p4"
       >
-        Danh mục thức uống
+        Danh mục
       </p>
         <Row className="mt-3 justify-content-around" name="category-section">
           {
-            categories.map((category)=><Col xs={5} md={5} lg={4} xl={3} className="m-2 m-sm-1" key={category.id}>
+            categories.map((category)=><Col xs={5} md={5} lg={4} xl={3} className="m-2 m-sm-1 " key={category.id}>
             <CategoryItem id={category.id} src={category.photo} text={category.name}/>
           </Col>)
           }
-          {/* <Col className="col-md-3">
-            <CategoryItem src={s1} alt="s1" text="Coffee" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s2} alt="s1" text="Tea" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s3} alt="s1" text="Ice Blended" />
-          </Col> */}
-        </Row>
-
-        {/* <Row className="mt-3 justify-content-md-around">
-          <Col className="col-md-3">
-            <CategoryItem src={s4} alt="s1" text="Chocolate" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s5} alt="s1" text="Fruit Juice" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s6} alt="s1" text="Milk Tea" />
-          </Col>
-        </Row>
-
-        <Row className="mt-3 justify-content-md-around">
-          <Col className="col-md-3">
-            <CategoryItem src={s7} alt="s1" text="Cocktail" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s8} alt="s1" text="Shakes" />
-          </Col>
-          <Col className="col-md-3">
-            <CategoryItem src={s9} alt="s1" text="Soft Drink" />
-          </Col>
-        </Row> */}
+          
+        </Row> 
       </Container>
     </div>
   );

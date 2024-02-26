@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   font-family: "DM Serif Display Regular";
 }
@@ -59,11 +62,11 @@ main {
 }
 
 .btn-primary{
-  background-color: #7D6E83 !important;
+  background-color: sienna!important;
   color: #fff !important;
-  border-color: #7d6e83 !important;
+  border-color: sienna !important;
   --bs-btn-hover-color: #fff !important;
-  --bs-btn-hover-bg: #7d6e83c4 !important;
+  --bs-btn-hover-bg: #663800 !important;
   align-items: center;
 }
 
@@ -78,19 +81,19 @@ main {
 
 .btn-outline-primary {
   background-color: #fff !important;
-  color: #7d6e83 !important;
-  border-color: #7d6e83 !important;
+  color: sienna !important;
+  border-color: sienna !important;
   --bs-btn-hover-color: #fff !important;
-  --bs-btn-hover-bg: #7d6e83c4 !important;
+  --bs-btn-hover-bg: #663800 !important;
   align-items: center;
 }
 
 .btn-outline-light {
   background-color: #fff !important;
-  color: #7d6e83 !important;
+  color: sienna !important;
   border-color: #fff !important;
   --bs-btn-hover-color: #fff !important;
-  --bs-btn-hover-bg: #7d6e83 !important;
+  --bs-btn-hover-bg: sienna !important;
   align-items: center;
 }
 
@@ -101,7 +104,7 @@ main {
 }
 
 .cart {
-  color: #7d6e83 !important;
+  color: sienna !important;
   margin-right: 10px;
   width: 24px;
   height: 24px;
@@ -133,11 +136,11 @@ table {
 }
 
 .active{
-  background-color: #7D6E83 !important;
+  background-color: sienna !important;
 }
 
 .cart-badge{
-  background-color: #7D6E83 !important;
+  background-color: sienna !important;
   position: absolute;
   left: 10px;
   top: 0px ;
@@ -164,22 +167,40 @@ table {
 .footer-row {
   color: white;
   align-items: center;
+  width: 25%;
 }
 
 .img-bestSeller {
-  width: 100%;
   border-radius: .5rem .5rem 0 0;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.card-img-top2{
+  width: 100%;
+  border-radius: 0.5cm;
+  height: 25vw;
+  object-fit: cover;
 }
 
 .img-cart {
   width: 150px;
 }
 
+.bg-img {
+  background-image: url("/src/img/login_background.jpg");
+}
 
 .img-rcmCate {
+  object-fit: cover;
+  border-radius: 0.5cm;
   position: relative;
   width: 100%;
-  height: 180%;
+  height: 15vw;
   z-index: 1;
 }
 
@@ -243,6 +264,11 @@ table {
   box-shadow: 0 0 0 0.05rem #796f7c !important;
 }
 
+.shadow {
+  text-shadow: 2px 0 #05582b, -2px 0 #ffffff0c, 0 2px #ffffff00, 0 -2px #05582b,
+  1px 1px #ffffff00, -1px -1px #ffffff00, 1px -1px #ffffff00, -1px 1px #ffffff00;;
+}
+
 .bg-custom-button {
   background-color: #1f2833;
   border-color: #45a293;
@@ -252,11 +278,11 @@ table {
 }
 
 .footer {
-  padding: 60px 0px 60px 0px;
+  padding: 20px 0px 20px 0px;
   bottom: 0;
   position: relative;
   width: 100%;
-  background: #7d6e83;
+  background: #663800;
   display: flex;
   align-items: center;
 }
@@ -307,20 +333,20 @@ hr.solid-vert {
 }
 
 .active>.page-link{
-  background-color: #7D6E83 !important;
+  background-color: sienna !important;
   border-color: #796f7c !important;
 }
 
 .active.menu-item.nav-link{
   background-color: white !important;
-  color : #7D6E83;
-  border-bottom: 2px solid #7d6e83;
+  color : sienna;
+  border-bottom: 2px solid sienna;
 }
 
 .active.cart-item.nav-link{
   background-color: white !important;
-  color : #7D6E83;
-  border-bottom: 2px solid #7d6e83;
+  color : sienna;
+  border-bottom: 2px solid sienna;
 }
 
 .image-form{
@@ -353,11 +379,6 @@ hr.solid-vert {
 .search-box{
   margin: auto !important;
 }
-
-.login-btn{
-  align-self: flex-end;
-}
-
 
 .form-wrapper{
   color:#444;
@@ -409,30 +430,37 @@ hr.solid-vert {
   font-weight: 700;
   font-size: 36px;
   line-height: 48px;
-  color: #7D6E83;
+  color: sienna;
 }
 #p2 {
-
-  font-family: 'DM Serif Display';
-  font-style: italic;
-  font-size: 56px;
+  font-family: 'Georgia';
+  font-size: 52px;
   line-height: 48px;
-  color: #D0B8A8;
+  color: #291c12;
+  padding: 1cm 1cm 0.3cm 1cm;
+}
+.intro{
+  background-color:rgba(197, 194, 190, 0.47);
+  border:rgba(59, 62, 65, 0.3);
+  border-width: 2mm;
+  border-style:solid;
 }
 #p3 {
-
   font-family: 'Work Sans';
   font-style: italic;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
+  padding-left: 1cm;
+  padding-right: 1cm;
+  padding-bottom: 0.5cm;
 }
 
 #p4{
   font-family: 'DM Serif Display';
-  font-size: 36px;
+  font-size: 27px;
   line-height: 48px;
-  color: #D0B8A8;
+  color: #04242a;
 }
 
 .view {

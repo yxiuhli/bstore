@@ -16,33 +16,31 @@ export default function ContactsPage() {
         display: "flex"
       }} >
 
-    <Row>
-      <Col xs={7} lg={6} className="d-flex" >
-        <Row className="ms-lg-5 my-auto">
-          <h1 id="p1"> ABOUT US </h1>
-          <h2 id="p2" > Bạn là bàn đạp để chúng tôi phát triển </h2>
+<Row className='my-auto ms-5 w-3/5'>
+            
+            
+            <Col>
+            <div className='intro'>
+            <p id="p2">ABOUT US</p>
+            <p id="p3"> 
+            Bạn là bàn đạp để chúng tôi phát triển. Với mục tiêu đem lại trải nghiệm tốt nhất cho khách hàng, B-Store luôn sẵn sàng phục vụ những sản phẩm tốt nhất cho mọi người!!
+            <hr/><br/>Thông tin liên hệ:
+            <ul>
+              <li>Email: admin@gmail.com</li>
+              <li>SDT: (917) 112-245</li>
+              <li>Địa chỉ: Quận 1, TP. HCM</li>
+            </ul>
+            
+            
+            
+          </p>
           <p id="p3"> 
-          Với mục tiêu đem lại trải nghiệm tốt nhất cho khách hàng, IROSAS COFFEE luôn sẵn sàng phục vụ những sản phẩm tốt nhất cho mọi người!! 
+          
           </p>
-        </Row>
-      </Col>
-      <Col xs={5} lg={6} className="d-flex" style={{ color:"#7d6e83" }}>
-        <Row className="ms-lg-5 my-auto">
-          <p>
-            <FaRegEnvelope className="me-2"/>
-            <a href="mailto:admin_irosas@gmail.com" className="nav-link d-inline-block">
-              admin_irosas@gmail.com
-            </a>
-          </p>
-          <p>
-            <FaPhone className="me-2" />
-            (917) 112 - 245 </p>
-          <p>
-            <FaMapMarkerAlt className="me-2" />KTX Khu A - ĐHQG HCM </p>
-        </Row>
-        
-      </Col>
-    </Row>
+            </div>
+            </Col>
+            </Row>
+    
   </Container>
   );
 }

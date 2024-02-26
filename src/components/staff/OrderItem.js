@@ -45,7 +45,7 @@ const OrderItem = ({order}) => {
   }
 
   const handleConfirmOrder = () =>{
-    order.status = "Đang pha chế"
+    order.status = "Đang xử lý"
 
     setOrders(
       orders.map(ord=>
@@ -72,13 +72,13 @@ const OrderItem = ({order}) => {
         <td>{order.id}</td>
         <td>{order.name}</td>
         <td>{order.address}</td>
-        <td style={{ color: order.status === "Chờ xác nhận" ? 'orange' : order.status === "Đã giao" ? 'green' : order.status === "Đã hủy" ? 'red' : order.status === "Đang giao hàng" ? 'gold' : order.status === "Đang pha chế"? "burlywood": ""  }}>{order.status}</td>
+        <td style={{ color: order.status === "Chờ xác nhận" ? 'orange' : order.status === "Đã giao" ? 'green' : order.status === "Đã hủy" ? 'red' : order.status === "Đang giao hàng" ? 'gold' : order.status === "Đang xử lý"? "burlywood": ""  }}>{order.status}</td>
         <td>{order.date}</td>
         <td>{order.total?.toLocaleString()} đ</td>
         <td>
             <DetailButton href={`order/${order.id}`} />
             {
-              order.status === "Chờ xác nhận" ? <><CheckButton onClick={handleConfirmOrder}/><CancelButton onClick={()=>setShowModal(true)}/></> : order.status === "Đã giao" ? <></> : order.status === "Đã hủy" ? <></> : order.status === "Đang pha chế" ? <CheckButton onClick={handleShipOrder}/> : <CheckButton onClick={handleFinishOrder}/>
+              order.status === "Chờ xác nhận" ? <><CheckButton onClick={handleConfirmOrder}/><CancelButton onClick={()=>setShowModal(true)}/></> : order.status === "Đã giao" ? <></> : order.status === "Đã hủy" ? <></> : order.status === "Đang xử lý" ? <CheckButton onClick={handleShipOrder}/> : <CheckButton onClick={handleFinishOrder}/>
             }
         </td>
       </tr>

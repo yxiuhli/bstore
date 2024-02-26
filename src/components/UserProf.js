@@ -14,7 +14,7 @@ const UserProf = ({src,name}) => {
 
   return (
       <Dropdown className='login-btn d-flex align-items-center' style={{ width: "fit-content" }}>
-        <Dropdown.Toggle variant="light">
+        <Dropdown.Toggle variant="light" className="flex flex-row align-items-center">
           <img src={src?src:"images/profile_pic.jpg"} alt="userprofile" className='user-nav me-2'/>
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-menu-end">

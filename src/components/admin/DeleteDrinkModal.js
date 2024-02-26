@@ -21,7 +21,7 @@ const DeleteDrinkModal = (props) => {
     ).fire(
       {
         icon: "success",
-        text: "Xóa thức uống thành công",
+        text: "Xóa sản phẩm thành công",
       }
     )
   }
@@ -36,12 +36,12 @@ const DeleteDrinkModal = (props) => {
       <Form style={{ backgroundColor:"#DFD3C3", borderRadius: ".5rem" }} onSubmit={onSubmit}>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" className="w-100 text-center">
-          Xóa thức uống
+          Xóa sản phẩm
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>
-          Bạn có chắc chắn muốn xóa thức uống này?
+          Bạn có chắc chắn muốn xóa sản phẩm này?
         </p>
       </Modal.Body>
       <Modal.Footer>

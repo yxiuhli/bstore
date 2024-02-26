@@ -98,7 +98,7 @@ const RegisterPage = () => {
         }}
       >
         <Row>
-        <div className="navbar-brand"><h1 className="text-center mt-3" style={{ color: "#7D6E83" }}>IROSAS</h1></div>
+        <div className="navbar-brand"></div>
         <h3 className="text-center mt-3" id="p1" style={{ fontSize: "26px" }}>Đăng ký</h3>
         <Form onSubmit={onSubmit}>
           <Form.Label>Email</Form.Label>

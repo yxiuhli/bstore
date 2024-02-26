@@ -6,7 +6,7 @@ import TopAppBar from './TopAppBar'
 const ManageDrinkContainer = () => {
   return (
     <div>
-      <TopAppBar title="Quản lý thức uống"/>
+      <TopAppBar title="Quản lý sản phẩm"/>
       <DrinkTable/>
     </div>
   )

@@ -4,12 +4,23 @@ import { MdOutlineAccountCircle } from 'react-icons/md'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import useDatabase from '../../hooks/useDatabase'
 
 const DropDownAccount = () => {
-  const {auth, setAuth} = useAuth();
+  const {auth, setAuth, accounts} = useAuth();
+  
+  const {drinks, categories, foodInOrder, orders, feedbacks} = useDatabase();
   const navigate = useNavigate();
 
   const onClick = () =>{
+    if(auth?.user?.type === 1 ){
+      localStorage.setItem('accounts', JSON.stringify(accounts));
+      localStorage.setItem('drinks', JSON.stringify(drinks));
+      localStorage.setItem('categories', JSON.stringify(categories));
+      localStorage.setItem('inorder', JSON.stringify(foodInOrder));
+      localStorage.setItem('orders', JSON.stringify(orders));
+      localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    }
     setAuth({});
     navigate("/");
   }

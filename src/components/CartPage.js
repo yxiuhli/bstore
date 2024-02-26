@@ -33,10 +33,14 @@ const CartPage = () => {
           backgroundSize:"100% 100%",
           display: "flex"
         }}> {/* <!------Introducer --> */}
-          <Row className='my-auto ms-5'>
-            <p id="p1">Thưởng thức hương vị</p> 
-            <p id="p2">nguyên chất</p>
-            <p id="p3">Sự hài lòng của bạn là niềm động lực của chúng tôi !</p>
+          <Row className='my-auto ms-5 max-w-1/2 w-fit'>
+            
+            
+            <Col>
+            <div className='intro'>
+            <p id="p2">GIỎ HÀNG</p>
+            </div>
+            </Col>
             </Row>
 
         </Container> {/* <!-----End Introducer--> */}

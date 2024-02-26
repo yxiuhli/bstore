@@ -7,20 +7,18 @@ import {
 const Footer = () => {
   return (
     <Container className='footer' fluid>
-      <Col className="d-flex align-items-center">
-        <span className='copy-right col-1'>Copyright 2022</span>
-        <hr className='solid me-2'/>
-        <h2 style={{ color:"#fff" }}>Irosas</h2>
-
+      
       <Container >
         <Row className='ms-auto ms-sm-2 ms-xs-2'>
+          <Col className="d-flex align-items-center text-2xl">
+            <h2 style={{ color:"#fff" }}>B-Store</h2>
+            <hr className='solid me-2 ml-4'/>
+          </Col>
           <Col md={5} sm={12} xs={12} className='d-flex footer-row'>
-            <span>
               <FaRegEnvelope style={{ color:"white", marginRight:"10px" }}/>
-              <a href="mailto:admin_irosas@gmail.com" className="nav-link d-inline-block text-white">
-                admin.irosas@gmail.com
+              <a href="mailto:admin@gmail.com" className="nav-link d-inline-block text-white">
+                admin@gmail.com
               </a>
-            </span>
         </Col>
         <Col md={3} sm={12} xs={12} className='d-flex footer-row'>
           <FaPhone style={{ color:"white", marginRight:"10px" }}/>
@@ -28,12 +26,10 @@ const Footer = () => {
         </Col>
         <Col md={4} sm={12} xs={12} className=' d-flex footer-row'>
           <FaMapMarkerAlt style={{ color:"white", marginRight:"10px" }}/>
-          KTX Khu A - ĐHQG HCM
+          Quận 1, TP. HCM
         </Col>
         </Row>
-      
       </Container>
-      </Col>
     </Container>
   )
 }

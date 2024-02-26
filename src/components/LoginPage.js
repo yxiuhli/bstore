@@ -74,7 +74,7 @@ const LoginPage = () => {
       }}
     >
       <Container
-      className="px-5"
+      className="px-5 drop-shadow-2xl"
         style={{
           width:"40%",
           display: "flex",
@@ -84,8 +84,7 @@ const LoginPage = () => {
         }}
       >
         <Row>
-          <div className="navbar-brand"><h1 className="text-center mt-3" style={{ color: "#7D6E83" }}>IROSAS</h1></div>
-          <h4 className="text-center" id="p3">Glad to see you here</h4>
+          <div className="navbar-brand"></div>
           <h3 className="text-center mt-3" id="p1" style={{ fontSize: "26px" }}>Đăng nhập</h3>
         <Form  onSubmit={onSubmit}>
         <Form.Group className="mb-3">

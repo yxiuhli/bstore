@@ -6,13 +6,22 @@ import useDatabase from "../hooks/useDatabase";
 import background from "../img/ContactPage/backgroudContact.png";
 import MenuItem from './MenuItem';
 import RecommendCategory from './RecommendCategory';
-
+import { useProduct } from '../context/ProductContext';
+import Spinner from './Spinner';
+import { useCategory } from '../context/CategoryContext';
 
 const HomePage = () => {
   const {drinks, categories} = useDatabase()
   const navigate = useNavigate()
   const reversed = [...drinks].reverse();
 
+  if (!drinks || !categories) {
+    return (
+      <>
+          <Spinner size={100} loading />
+      </>
+    );
+  }
 
   return (
     <div className='mb-5'>
@@ -25,12 +34,14 @@ const HomePage = () => {
           backgroundSize:"100% 100%",
           display: "flex"
         }}> {/* <!------Introducer --> */}
-          <Row className='my-auto ms-5'>
-            <p id="p1">Thưởng thức hương vị</p>
-            <p id="p2">nguyên chất</p>
-            <p id="p3">"Tràn đầy năng lượng mỗi ngày cùng thức uống tuyệt vời"</p>
+          <Row className='my-auto ms-5 w-1/2'>
+            
+            
             <Col>
-              <Button Button className="btn-default get" onClick={()=>navigate("/menu")}> Đặt ngay <i class="fas fa-long-arrow-right" id="arrowGet"></i></Button>
+            <div className='intro'>
+            <p id="p2">B-Store - cửa hàng chậu, cây cảnh uy tín</p>
+            <p id="p3">Cung cấp các loại chậu, cây cảnh nhiều mẫu mã</p>
+            </div>
             </Col>
             </Row>
 
@@ -39,7 +50,7 @@ const HomePage = () => {
         <Container className='mt-4'> {/* <!----Body Part--> */}
             <Col className="d-flex align-items-center">  {/* <!-----headline-feature-product--> */}
                 <span id="p4">Bán chạy nhất</span>
-                <Button variant='outline-light' className="view ms-auto" onClick={()=>navigate("/menu")}>Xem thực đơn
+                <Button variant='outline-light' className="view ms-auto" onClick={()=>navigate("/menu")}>Xem tất cả sản phẩm
                     <FaLongArrowAltRight className='me-2 ms-2'/>
                 </Button> {/* <!-----End headline-feature-product--> */}
             </Col>
@@ -75,7 +86,7 @@ const HomePage = () => {
              {/* <!-------End Feature--> */}
 
             <div className="mt-4">
-                <span id="p4">Thức uống mới</span>
+                <span id="p4">Sản phẩm mới</span>
             </div>
 
             <Row  className='mt-3' style={{ justifyContent: "space-around"}}>
@@ -109,7 +120,7 @@ const HomePage = () => {
             {/* <!-------End New Product--> */}
             <Container fluid id="container-rcmd-cate">  {/* <!---Recommended Category--> */}
                 <Col className="d-flex mt-4 align-items-center">  {/* <!-----headline-feature-product--> */}
-                    <span id="p4">Danh mục thức uống</span>
+                    <span id="p4">Danh mục sản phẩm</span>
                     <Button variant="outline-light" className='view-cate ms-auto ' onClick={()=>navigate("/category")}>Xem tất cả danh mục
                         <FaLongArrowAltRight />
                     </Button> {/* <!-----End headline-feature-product--> */}
